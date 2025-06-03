@@ -22,12 +22,6 @@ const handleIdade = (e) => {
     <>
     <div className='card'>
       
-      {pessoas.map(e=>(
-      <div key={e.nome}>
-        <p>nome: {e.nome}</p>
-        <p>idade: {e.idade}</p>
-      </div>
-      ))}
   </div>
   
       <br />
@@ -35,7 +29,7 @@ const handleIdade = (e) => {
       <h1 className='titulo'>Check list</h1>
       <br />
       <br />
-      <BoxTexto produto={""} handleClick={handleClick} handleNome={handleNome} handleIdade={handleIdade} nome={nome} idade={idade}/>
+      <BoxTexto produto={pessoas} handleClick={handleClick} handleNome={handleNome} handleIdade={handleIdade} nome={nome} idade={idade}/>
     
     </>
   )
