@@ -27,6 +27,9 @@ const handleIdade = (e) => {
 const handleMateria = (e) => {
   setMateria(e.target.value)
 }
+const handleDays = (e) => {
+  setDays(e.target.value)
+}
   return (
     <>
     <div className='card'>
@@ -38,7 +41,7 @@ const handleMateria = (e) => {
       <h1 className='titulo'>Check list</h1>
       <br />
       <br />
-      <BoxTexto produto={pessoas} handleClick={handleClick} handleNome={handleNome} handleIdade={handleIdade} nome={nome} idade={idade} handleMateria={handleMateria} materia={materia}/>
+      <BoxTexto produto={pessoas} handleClick={handleClick} handleNome={handleNome} handleIdade={handleIdade} nome={nome} idade={idade} handleMateria={handleMateria} materia={materia} handleDays={handleDays} days={days}/>
     
     </>
   )

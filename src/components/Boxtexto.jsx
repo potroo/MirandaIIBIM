@@ -1,6 +1,6 @@
 import './Boxtexto.css'
 
-function BoxTexto({ handleClick, handleNome, handleIdade, nome, idade, produto, handleMateria, materia }) {
+function BoxTexto({ handleClick, handleNome, handleIdade, nome, idade, produto, handleMateria, materia, handleDays }) {
   return (
     <>
       <div className="top">
@@ -9,12 +9,12 @@ function BoxTexto({ handleClick, handleNome, handleIdade, nome, idade, produto, 
           onChange={handleNome}
           value={nome}
         />
-        <input type="number"
-          placeholder='digite aqui'
+        <input type="text"
+          placeholder='Descrição'
           onChange={handleIdade}
           value={idade} />
 
-        <label htmlFor="materias">Matérias</label>
+        <label htmlFor="materias">selecione uma Materia</label>
 
         <select onChange={handleMateria}>
 
@@ -27,7 +27,20 @@ function BoxTexto({ handleClick, handleNome, handleIdade, nome, idade, produto, 
           <option value="Georafia">Georafia</option>
 
         </select>
+        
+        <label htmlFor="days">Dias da semana</label>
 
+        <select onChange={handleDays}>
+
+        <option value="segunda">Segunda-feira</option>
+        <option value="terça">Terça-feira</option>
+        <option value="quarta">Quarta-feira</option>
+        <option value="quinta">Quinta-feira</option>
+        <option value="sexta">Sexta-feira</option>
+        <option value="sábado">Sábado</option>
+        <option value="domingo">Domingo</option>
+
+        </select>
 
         < button onClick={handleClick}>clique aqui</button>
       </div >
