@@ -1,21 +1,23 @@
 import './Boxtexto.css'
 
-function BoxTexto({ handleClick, handleNome, handleIdade, nome, idade, produto, handleMateria, materia, handleDays }) {
+function BoxTexto({ handleClick, handleNome, nome, listaTarefas, handleMateria, handleDays }) {
   return (
     <>
       <div className="top">
+        <div>
         <input type="text"
           placeholder='digite aqui'
           onChange={handleNome}
           value={nome}
         />
-        <input type="text"
+        {/* <input type="text"
           placeholder='Descrição'
           onChange={handleIdade}
-          value={idade} />
+          value={idade} /> */}
 
         <label htmlFor="materias">selecione uma Materia</label>
-
+        </div>
+        <div>
         <select onChange={handleMateria}>
 
           <option value="Matematica">Matematica</option>
@@ -27,20 +29,22 @@ function BoxTexto({ handleClick, handleNome, handleIdade, nome, idade, produto, 
           <option value="Georafia">Georafia</option>
 
         </select>
-        
-        <label htmlFor="days">Dias da semana</label>
 
+        <label htmlFor="days">Dias da semana</label>
+        </div>
+        <div>
         <select onChange={handleDays}>
 
-        <option value="segunda">Segunda-feira</option>
-        <option value="terça">Terça-feira</option>
-        <option value="quarta">Quarta-feira</option>
-        <option value="quinta">Quinta-feira</option>
-        <option value="sexta">Sexta-feira</option>
-        <option value="sábado">Sábado</option>
-        <option value="domingo">Domingo</option>
+          <option value="segunda">Segunda-feira</option>
+          <option value="terça">Terça-feira</option>
+          <option value="quarta">Quarta-feira</option>
+          <option value="quinta">Quinta-feira</option>
+          <option value="sexta">Sexta-feira</option>
+          <option value="sábado">Sábado</option>
+          <option value="domingo">Domingo</option>
 
         </select>
+        </div>
 
         < button onClick={handleClick}>clique aqui</button>
       </div >
@@ -49,10 +53,11 @@ function BoxTexto({ handleClick, handleNome, handleIdade, nome, idade, produto, 
 
       <div className='Box'>
 
-        {produto.map(e => (
-          <div className="Box2" key={e.nome}>
+        {listaTarefas.map(e => (
+          <div className="Box2" key={e.id}>
             <p>nome: {e.nome}</p>
-            <p>idade: {e.idade}</p>
+            <p>materia: {e.materia}</p>
+            <p>dia: {e.day}</p>
           </div>
 
         ))}

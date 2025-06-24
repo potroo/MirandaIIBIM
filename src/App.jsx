@@ -2,32 +2,29 @@ import { useState } from 'react'
 import './App.css'
 import BoxTexto from './components/Boxtexto'
 
-let pessoas =[]
+let tarefas =[]
 function App() {
 const [ nome, setNome] = useState("")
-const[ idade, setIdade ] = useState("")
-const[ materia, setMateria ] = useState("")
-let newArray = array.filter( item => materia===item.materia)
+const[ day, setDays ] = useState("segunda")
+const[ materia, setMateria ] = useState("Matematica")
+// let newArray = tarefas.filter( item => materia===item.materia)
+// let newVariedades = tarefas.filter( item => day===item.days)
 
 
 const handleClick = () => {
-  pessoas.push({id:pessoas.length, nome, idade})
-  console.log(pessoas)
+  tarefas.push({id:tarefas.length,materia, nome, day})
+  // console.log(tarefas)
   setNome("")
-  setIdade("")
+  setDays("")
 }
 const handleNome = (e) => {
   setNome(e.target.value)
-
 }
-const handleIdade = (e) => {
-  setIdade(e.target.value)
-  
-} 
 const handleMateria = (e) => {
   setMateria(e.target.value)
 }
 const handleDays = (e) => {
+  console.log("")
   setDays(e.target.value)
 }
   return (
@@ -41,7 +38,7 @@ const handleDays = (e) => {
       <h1 className='titulo'>Check list</h1>
       <br />
       <br />
-      <BoxTexto produto={pessoas} handleClick={handleClick} handleNome={handleNome} handleIdade={handleIdade} nome={nome} idade={idade} handleMateria={handleMateria} materia={materia} handleDays={handleDays} days={days}/>
+      <BoxTexto listaTarefas={tarefas} handleClick={handleClick} handleNome={handleNome} nome={nome}  handleMateria={handleMateria} materia={materia} handleDays={handleDays} days={day}/>
     
     </>
   )
